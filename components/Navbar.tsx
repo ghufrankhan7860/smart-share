@@ -23,7 +23,7 @@ export default function Navbar() {
           <img 
             src={navbarConfig.logo.src} 
             alt={navbarConfig.logo.alt} 
-            className="w-8 h-8 rounded-lg object-cover"
+            className="w-18 h-18 rounded-lg object-cover"
           />
           <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
             {navbarConfig.logo.text}
