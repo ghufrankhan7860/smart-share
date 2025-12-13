@@ -1,12 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Check, Info } from "lucide-react";
 import { pricingConfig } from "@/config/pricing";
 
 export default function PricingSlider() {
   const { controls, output, text } = pricingConfig;
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const rotate = useTransform(scrollYProgress, [0, 1], [-10, 10]);
   
   const [budget, setBudget] = useState(50000);
   const [duration, setDuration] = useState(controls.duration.options[0]);
@@ -30,7 +38,7 @@ export default function PricingSlider() {
   };
 
   return (
-    <section className="py-20 bg-white dark:bg-slate-900 relative overflow-hidden">
+    <section ref={containerRef} className="py-20 bg-white dark:bg-slate-900 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         
         {/* Left: Controls */}
@@ -113,7 +121,10 @@ export default function PricingSlider() {
         {/* Right: Output */}
         <div className="relative">
           {/* Decorative backdrop */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-purple-100 to-indigo-100 dark:from-purple-900/40 dark:to-indigo-900/40 rounded-3xl transform rotate-3 scale-105 opacity-50"></div>
+          <motion.div 
+            style={{ rotate }}
+            className="absolute inset-0 bg-gradient-to-tr from-purple-100 to-indigo-100 dark:from-purple-900/40 dark:to-indigo-900/40 rounded-3xl scale-105 opacity-50"
+          ></motion.div>
           
           <motion.div 
             initial={{ scale: 0.9, opacity: 0 }}
