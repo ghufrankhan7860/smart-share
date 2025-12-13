@@ -12,8 +12,8 @@ export const footerConfig = {
   ],
   form: {
     fields: {
-      name: { label: "Full Name", placeholder: "John Doe" },
-      email: { label: "Work Email", placeholder: "john@company.com" },
+      name: { label: "Full Name", placeholder: "name" },
+      email: { label: "Work Email", placeholder: "email" },
       companySize: {
         label: "Company Size",
         placeholder: "Select size",
@@ -24,7 +24,7 @@ export const footerConfig = {
           "200+ employees",
         ],
       },
-      website: { label: "Website URL", placeholder: "https://company.com" },
+      website: { label: "Website URL", placeholder: "https://marketingsmartshare.com" },
     },
     submitButton: {
       default: "Get Started",
