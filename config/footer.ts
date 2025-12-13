@@ -12,19 +12,12 @@ export const footerConfig = {
   ],
   form: {
     fields: {
-      name: { label: "Full Name", placeholder: "name" },
-      email: { label: "Work Email", placeholder: "email" },
-      companySize: {
-        label: "Company Size",
-        placeholder: "Select size",
-        options: [
-          "1-10 employees",
-          "11-50 employees",
-          "51-200 employees",
-          "200+ employees",
-        ],
-      },
-      website: { label: "Website URL", placeholder: "https://marketingsmartshare.com" },
+      name: { label: "Full Name", placeholder: "Name" },
+      email: { label: "Work Email", placeholder: "Email" },
+      companyName: { label: "Company Name", placeholder: "Your Company" },
+      mobile: { label: "Mobile Number", placeholder: "+91 00000 00000" },
+      website: { label: "Website URL", placeholder: "https://yourwebsite.com" },
+      message: { label: "Short Message", placeholder: "Tell us a bit about your campaign goals..." },
     },
     submitButton: {
       default: "Get Started",
@@ -43,6 +36,6 @@ export const footerConfig = {
       { label: "Terms", href: "#" },
       { label: "Twitter", href: "#" },
     ],
-    copyright: "© 2025 One Impression Clone.",
+    copyright: "© 2025 SmartShare.",
   },
 };

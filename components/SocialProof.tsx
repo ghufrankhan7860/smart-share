@@ -29,7 +29,7 @@ export default function SocialProof() {
           {marqueeBrands.map((brand, i) => (
             <div 
               key={i} 
-              className={`text-4xl md:text-5xl font-black opacity-30 hover:opacity-100 transition-all cursor-pointer ${brand.color} saturate-0 hover:saturate-100 duration-500 dark:invert hover:scale-110 transform`}
+              className={`text-4xl md:text-5xl font-black opacity-30 hover:opacity-100 transition-all cursor-pointer ${brand.color} saturate-0 hover:saturate-100 duration-500 hover:scale-110 transform`}
             >
               {brand.name}
             </div>
