@@ -3,6 +3,8 @@ export const navbarConfig = {
     badge: "1",
     text: "SmartShare",
     href: "/",
+    src: "/logo.png",
+    alt: "SmartShare Logo",
   },
   links: [
     {

@@ -29,7 +29,7 @@ export default function Hero() {
           className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight"
         >
           {heroConfig.title.line1} <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-indigo-600">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-indigo-600 dark:from-purple-400 dark:to-indigo-400">
             {heroConfig.title.highlight}
           </span>
         </motion.h1>
@@ -39,7 +39,7 @@ export default function Hero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-slate-600 max-w-2xl font-medium"
+          className="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl font-medium"
         >
           {heroConfig.description}
         </motion.p>
@@ -59,7 +59,7 @@ export default function Hero() {
           </Link>
           <Link 
             href={heroConfig.buttons.secondary.href} 
-            className="px-8 py-4 bg-white text-slate-900 border border-slate-200 rounded-full font-semibold text-lg hover:border-brand-purple hover:text-brand-purple transition-all shadow-sm transform hover:-translate-y-1"
+            className="px-8 py-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 rounded-full font-semibold text-lg hover:border-brand-purple dark:hover:border-purple-400 hover:text-brand-purple dark:hover:text-purple-400 transition-all shadow-sm transform hover:-translate-y-1"
           >
             {heroConfig.buttons.secondary.text}
           </Link>
@@ -71,12 +71,12 @@ export default function Hero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="grid grid-cols-3 gap-8 md:gap-16 mt-16 py-8 border-t border-slate-200/60 w-full max-w-3xl"
+          className="grid grid-cols-3 gap-8 md:gap-16 mt-16 py-8 border-t border-slate-200/60 dark:border-slate-800/60 w-full max-w-3xl"
         >
           {heroConfig.stats.map((stat, i) => (
-             <div key={i} className={`flex flex-col items-center ${i === 1 ? 'border-l border-r border-slate-200 px-4' : ''}`}>
-                <span className="text-3xl md:text-4xl font-bold text-slate-900">{stat.value}</span>
-                <span className="text-sm md:text-base text-slate-500 font-medium">{stat.label}</span>
+             <div key={i} className={`flex flex-col items-center ${i === 1 ? 'border-l border-r border-slate-200 dark:border-slate-800 px-4' : ''}`}>
+                <span className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">{stat.value}</span>
+                <span className="text-sm md:text-base text-slate-500 dark:text-slate-400 font-medium">{stat.label}</span>
              </div>
           ))}
         </motion.div>

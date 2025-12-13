@@ -20,10 +20,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href={navbarConfig.logo.href} className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-brand-purple rounded-lg flex items-center justify-center text-white font-bold text-xl">
-            {navbarConfig.logo.badge}
-          </div>
-          <span className="text-xl font-bold tracking-tight text-slate-900">
+          <img 
+            src={navbarConfig.logo.src} 
+            alt={navbarConfig.logo.alt} 
+            className="w-8 h-8 rounded-lg object-cover"
+          />
+          <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
             {navbarConfig.logo.text}
           </span>
         </Link>
@@ -32,7 +34,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-8">
           {navbarConfig.links.map((link) => (
             link.hasDropdown ? (
-              <div key={link.label} className="group relative cursor-pointer flex items-center gap-1 text-slate-600 hover:text-brand-purple transition-colors font-medium">
+              <div key={link.label} className="group relative cursor-pointer flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-brand-purple dark:hover:text-brand-purple transition-colors font-medium">
                 {link.label}
                 <ChevronDown className="w-4 h-4" />
                 <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-xl rounded-xl p-2 opacity-0 group-hover:opacity-100 transition-opacity invisible group-hover:visible translate-y-2 group-hover:translate-y-0">
@@ -44,7 +46,7 @@ export default function Navbar() {
                 </div>
               </div>
             ) : (
-              <Link key={link.label} href={link.href} className="text-slate-600 hover:text-brand-purple transition-colors font-medium">
+              <Link key={link.label} href={link.href} className="text-slate-600 dark:text-slate-300 hover:text-brand-purple dark:hover:text-brand-purple transition-colors font-medium">
                 {link.label}
               </Link>
             )
