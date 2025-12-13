@@ -34,7 +34,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-slate-50 dark:bg-slate-950 pt-24 pb-12 border-t border-slate-200 dark:border-slate-800">
+    <footer id="contact" className="bg-slate-50 dark:bg-slate-950 pt-24 pb-12 border-t border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 mb-20">
         
         {/* Left: Content */}

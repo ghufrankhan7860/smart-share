@@ -56,13 +56,10 @@ export default function Navbar() {
         {/* Right Actions (Desktop) */}
         <div className="hidden md:flex items-center gap-4">
           <ThemeToggle />
-          <Link 
-            href={navbarConfig.actions.login.href} 
-            className="text-slate-900 dark:text-slate-100 font-medium hover:text-brand-purple dark:hover:text-brand-purple transition-colors"
+          <button 
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="px-5 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 font-medium hover:border-brand-purple hover:text-brand-purple transition-all bg-white/50 dark:bg-slate-800/50"
           >
-            {navbarConfig.actions.login.label}
-          </Link>
-          <button className="px-5 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 font-medium hover:border-brand-purple hover:text-brand-purple transition-all bg-white/50 dark:bg-slate-800/50">
             {navbarConfig.actions.contact.label}
           </button>
         </div>
@@ -92,10 +89,13 @@ export default function Navbar() {
                 </Link>
               ))}
               <hr className="border-slate-100 dark:border-slate-800" />
-              <Link href={navbarConfig.actions.login.href} className="text-lg font-medium text-slate-900 dark:text-white">
-                {navbarConfig.actions.login.label}
-              </Link>
-              <button className="w-full py-3 rounded-xl bg-brand-purple text-white font-bold">
+              <button 
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="w-full py-3 rounded-xl bg-brand-purple text-white font-bold"
+              >
                 {navbarConfig.actions.contact.label}
               </button>
               <div className="pt-4 flex justify-center">
