@@ -41,7 +41,8 @@ export default function Navbar() {
 
     return (
         <motion.nav
-            initial={{ y: -100 }}
+            key={resolvedTheme}
+            initial={!mounted ? { y: -100 } : false}
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
             style={navStyle}
