@@ -38,8 +38,8 @@ export default function SocialProof() {
                             key={i}
                             onClick={() => handleBrandClick(i)}
                             className={`text-4xl md:text-5xl font-black transition-all cursor-pointer ${brand.color} duration-500 transform ${activeBrand === i
-                                    ? "opacity-100 scale-110 saturate-100"
-                                    : "opacity-30 hover:opacity-100 hover:scale-110 md:saturate-0 md:hover:saturate-100"
+                                ? "md:opacity-100 scale-110 saturate-100"
+                                : "md:opacity-30 hover:opacity-100 hover:scale-110 md:saturate-0 md:hover:saturate-100"
                                 }`}
                         >
                             {brand.name}
