@@ -3,6 +3,9 @@ export const videoGridConfig = {
     title: "Discover Top Content",
   },
   categories: ["All", "Beauty", "Fashion", "Content", "Health", "Food"],
+  labels: {
+    like: "Like",
+  },
   videos: [
     {
       id: 1,
@@ -11,6 +14,7 @@ export const videoGridConfig = {
       views: "120k",
       desc: "Summer OOTD #vibes",
       thumbnail: "bg-red-100",
+      src: "https://www.w3schools.com/html/mov_bbb.mp4",
     },
     {
       id: 2,
@@ -19,6 +23,7 @@ export const videoGridConfig = {
       views: "85k",
       desc: "My morning routine ✨",
       thumbnail: "bg-pink-100",
+      src: "https://www.w3schools.com/html/mov_bbb.mp4",
     },
     {
       id: 3,
@@ -27,6 +32,7 @@ export const videoGridConfig = {
       views: "2.1M",
       desc: "Best pasta recipe 🍝",
       thumbnail: "bg-orange-100",
+      src: "https://www.w3schools.com/html/mov_bbb.mp4",
     },
     {
       id: 4,
@@ -35,6 +41,7 @@ export const videoGridConfig = {
       views: "450k",
       desc: "Abs workout in 5 mins",
       thumbnail: "bg-green-100",
+      src: "https://www.w3schools.com/html/mov_bbb.mp4",
     },
     {
       id: 5,
@@ -43,6 +50,7 @@ export const videoGridConfig = {
       views: "30k",
       desc: "Suit styling tips",
       thumbnail: "bg-blue-100",
+      src: "https://www.w3schools.com/html/mov_bbb.mp4",
     },
     {
       id: 6,
@@ -51,6 +59,7 @@ export const videoGridConfig = {
       views: "1.2M",
       desc: "Glass skin secrets",
       thumbnail: "bg-purple-100",
+      src: "https://www.w3schools.com/html/mov_bbb.mp4",
     },
     {
       id: 7,
@@ -59,6 +68,7 @@ export const videoGridConfig = {
       views: "500k",
       desc: "New iPhone Unboxing",
       thumbnail: "bg-slate-100",
+      src: "https://www.w3schools.com/html/mov_bbb.mp4",
     },
     {
       id: 8,
@@ -67,6 +77,7 @@ export const videoGridConfig = {
       views: "90k",
       desc: "Chocolate cake 🍫",
       thumbnail: "bg-yellow-100",
+      src: "https://www.w3schools.com/html/mov_bbb.mp4",
     },
   ],
 };
