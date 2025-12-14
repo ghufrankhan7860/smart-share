@@ -12,7 +12,7 @@ export default function Hero() {
                 <img
                     src={heroConfig.image.src}
                     alt={heroConfig.image.alt}
-                    className="hidden md:block w-full h-full object-cover opacity-60 dark:opacity-40"
+                    className="md:block w-full h-full object-cover opacity-60 dark:opacity-40"
                 />
                 {/* Radial gradient mask */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-background)_30%,_transparent_100%)] sm:bg-[radial-gradient(circle_at_center,_var(--color-background)_40%,_transparent_80%)]"></div>
