@@ -39,9 +39,22 @@ export default function Hero() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl font-medium"
+                    className="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl font-medium"
                 >
                     {heroConfig.description}
+
+                </motion.p>
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl font-medium"
+                >
+                    {
+                        heroConfig.description2
+                    }
+
                 </motion.p>
 
                 <motion.div

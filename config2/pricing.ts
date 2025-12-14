@@ -1,7 +1,7 @@
 export const pricingConfig = {
   text: {
     heading: {
-      line1: "Smart & Custom",
+      line1: "Smart & Dynamic",
       line2: "Campaign Pricing",
     },
     description:
@@ -20,10 +20,10 @@ export const pricingConfig = {
     duration: {
       label: "Campaign Duration",
       options: [
-        { label: "1 Months", value: "3m", multiplier: 1 },
-        { label: "2 Months", value: "6m", multiplier: 1.2, tag: "Popular" },
+        { label: "3 Months", value: "3m", multiplier: 1 },
+        { label: "6 Months", value: "6m", multiplier: 1.2, tag: "Popular" },
         {
-          label: "3 Months",
+          label: "12 Months",
           value: "12m",
           multiplier: 1.5,
           tag: "Best Value",

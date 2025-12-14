@@ -51,7 +51,11 @@ export default function VideoGrid() {
                                 transition={{ duration: 0.2 }}
                                 key={video.id}
                             >
-                                <VideoCard video={video} />
+                                {video.type === "youtube" ? (
+                                    <YouTubeCard video={video} />
+                                ) : (
+                                    <VideoCard video={video} />
+                                )}
                             </motion.div>
                         ))}
                     </AnimatePresence>
@@ -116,6 +120,39 @@ function VideoCard({ video }: { video: any }) {
                     </div>
                 </div>
             </div>
+        </div>
+    );
+}
+
+function YouTubeCard({ video }: { video: any }) {
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    // Construct the embed URL with parameters for autoplay and mute
+    const embedUrl = isPlaying
+        ? `${video.src}${video.src.includes('?') ? '&' : '?'}autoplay=1&mute=1&controls=0&modestbranding=1&loop=1`
+        : video.src;
+
+    return (
+        <div
+            className="relative aspect-[9/16] rounded-2xl overflow-hidden cursor-pointer group shadow-md hover:shadow-xl transition-all hover:-translate-y-1 bg-white dark:bg-slate-900"
+            onMouseEnter={() => setIsPlaying(true)}
+            onMouseLeave={() => setIsPlaying(false)}
+        >
+            {/* Thumbnail / Placeholder */}
+            <div className={`absolute inset-0 ${video.thumbnail} dark:opacity-80 flex items-center justify-center transition-opacity duration-300 z-10 ${isPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+                <Play className="w-12 h-12 text-white opacity-80" fill="currentColor" />
+            </div>
+
+            {/* YouTube Iframe */}
+            {isPlaying && (
+                <iframe
+                    src={embedUrl}
+                    className="absolute inset-0 w-full h-full object-cover z-10"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    title={video.desc}
+                />
+            )}
         </div>
     );
 }
