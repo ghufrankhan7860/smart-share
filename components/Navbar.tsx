@@ -16,9 +16,9 @@ export default function Navbar() {
 
     useEffect(() => setMounted(true), []);
 
-    // Light mode scroll animations (0 to 800px)
+    // Light mode scroll animations (0 to 200px)
     const bgLikeGlass = "rgba(255, 255, 255, 0.7)";
-    const bgDark = "rgba(0, 0, 0, 0.8)";
+    const bgDark = "#000000";
 
     const bgColor = useTransform(scrollY, [0, 200], [bgLikeGlass, bgDark]);
     const logoColor = useTransform(scrollY, [0, 200], ["#0f172a", "#ffffff"]); // slate-900 -> white
@@ -68,10 +68,10 @@ export default function Navbar() {
                     {navbarConfig.links.map((link) => (
                         link.hasDropdown ? (
                             <div key={link.label} className="group relative cursor-pointer flex items-center gap-1 font-medium hover:text-brand-purple dark:hover:text-brand-purple transition-colors">
-                                <motion.span style={linkTextStyle} className="text-slate-600 dark:text-slate-300">
-                                    {link.label}
-                                </motion.span>
-                                <ChevronDown className="w-4 h-4" />
+                                <motion.div style={linkTextStyle} className="flex items-center gap-1 text-slate-600 dark:text-slate-300">
+                                    <span>{link.label}</span>
+                                    <ChevronDown className="w-4 h-4" />
+                                </motion.div>
                                 <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-xl rounded-xl p-2 opacity-0 group-hover:opacity-100 transition-opacity invisible group-hover:visible translate-y-2 group-hover:translate-y-0">
                                     {link.dropdownItems?.map((item) => (
                                         <div key={item.label} className="p-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg cursor-pointer text-slate-600 dark:text-slate-300 hover:text-brand-purple dark:hover:text-brand-purple">
@@ -94,7 +94,7 @@ export default function Navbar() {
 
                 {/* Right Actions */}
                 <div className="flex items-center gap-2 md:gap-4">
-                    <ThemeToggle />
+                    <ThemeToggle style={btnStyle} />
                     <motion.button
                         onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                         style={btnStyle}
